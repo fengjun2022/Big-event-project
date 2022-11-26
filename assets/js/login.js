@@ -40,7 +40,7 @@ $(function () {
             let data = {
                 username: $('.reg-box [name=username]').val(), password: $('#reg-pow').val()
             }
-            $.post('http://www.liulongbin.top:3007/api/reguser', data, (res) => {
+            $.post('/api/reguser', data, (res) => {
                 if (res.status !== 0) {
                     return layer.msg(res.message)
                 }
@@ -57,7 +57,7 @@ $(function () {
         $('#form_login').on('submit', function (e) {
             e.preventDefault()
             $.ajax({
-                url: 'http://www.liulongbin.top:3007/api/login',
+                url: '/api/login',
                 method: 'POST',
                 data: $(this).serialize(),
                 success: res => {
