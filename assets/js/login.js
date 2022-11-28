@@ -62,7 +62,8 @@ $(function () {
                 data: $(this).serialize(),
                 success: res => {
                     if (res.status !== 0) return layer.msg('登录失败')
-                    console.log($(this).serialize(),);
+                    localStorage.setItem('token', res.token
+                    )
                     layer.msg('登录成功')
                     location.href = './index.html'
                 }
