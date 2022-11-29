@@ -15,20 +15,18 @@ $(function () {
 
             });
     })
+
 })
+
 
 //ajax接口
 function getUserInfo() {
     $.ajax({
         method: 'GET',
         url: '/my/userinfo',
-        headers: {
-
-
-        },
         success: function (res) {
 
-            if (res.status !== 0) return layui.layer.msg('获取用户信息失败，请重试！')
+            if (res.status !== 0) { return layui.layer.msg('获取用户信息失败，请重试！') }
             layui.layer.msg('获取成功！')
             returnderAvatar(res.data)
             //渲染用户函数接口
@@ -55,3 +53,6 @@ function returnderAvatar(user) {
     }
 
 }
+window.addEventListener('message', function (msg) {
+    console.log(msg.data);
+})
