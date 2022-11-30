@@ -27,6 +27,7 @@ $(function () {
             }
         })
     }
+    //监听用户点击事件
     $('#btnReset').on('click', function (e) {
         e.preventDefault()
         initUserInfo()
